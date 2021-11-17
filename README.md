@@ -1,4 +1,7 @@
-## Neulabs - Frontend developer take-home assignment
+![Neulabs logo](https://github.com/neulabscom/frontend-assignment/blob/main/neulabs-logo-k%4010x.png)
+
+
+## Frontend developer take-home assignment
 
 ### Project brief
 First things first: thank you for taking the time to take this test. We know how much your time is worth, and we greatly
