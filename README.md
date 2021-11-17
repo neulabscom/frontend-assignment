@@ -36,6 +36,7 @@ https://www.figma.com/proto/VrkWJvZ5Cm0gjPSSnw4y7U/Test-Frontend?page-id=18%3A11
 1. Please maintain a consistent code code style throughout the entire project
 2. The repository is configured to use styles with simple css imports, feel free to work this way or add any css-in-js library
 3. For animations you can use simple css or any library of your choice
+4. You can embed the google font where you prefer, in a global css or in the component you are building
 
 ### Project deadline
 
