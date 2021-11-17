@@ -1,10 +1,17 @@
-![Neulabs logo](https://github.com/neulabscom/frontend-assignment/blob/main/neulabs-logo-k%4010x.png)
+<div align="center">
+    <img src="./neulabs-logo-k%4010x.png" alt="frontend-assignment" width="400">
+  <br><br>
+  <a href="https://gitpod.io/from-referrer/">
+    <img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready to Code">
+  </a>
+</div>
 
 ## Frontend developer take-home assignment
 
 ### Project brief
 
-First things first: thank you for taking the time to take this test. We know how much your time is worth, and we greatly
+First things first: thank you for taking the time to take this test.
+We know how much your time is worth, and we greatly
 appreciate your effort.
 
 To work on this project:
@@ -44,6 +51,22 @@ Take the time you need to deliver a result that satisfies you, but please do not
 
 ### Quality assurance
 
-We value a lot of things when assessing a project. No particular hints on this, but this one: mind the details. ;-)
+We value a lot of things when assessing a project.
+
+No particular hints on this, but this one: mind the details. ;-)
 
 Happy coding!
+
+### Online one-click setup for coding
+
+You can use Gitpod (A free online VS Code-like IDE) for coding online.
+
+With a single click it will launch a workspace and automatically:
+
+- clone the "frontend-assignment" repo.
+- install the dependencies.
+- run `yarn dev`.
+
+So that you can start straight away.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
