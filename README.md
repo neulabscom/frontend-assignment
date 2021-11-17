@@ -6,10 +6,12 @@
 ### Project brief
 First things first: thank you for taking the time to take this test. We know how much your time is worth, and we greatly
 appreciate your effort.
+
 To work on this project:
  1. Clone this repository
  2. Create your app inside the repository, with the directory structure of your choice
  3. When you're done, submit a pull request with your solution
+ 4. Send an email to frontend-assignment@neulabs.com to notify the delivery of your project
 
 ### Project requirements
 You will have to create a small [storybook](https://storybook.js.org/) for the component defined in the following Figma files:
