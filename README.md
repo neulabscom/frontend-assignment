@@ -58,8 +58,6 @@ Take the time you need to deliver a result that satisfies you, but please do not
 
 ### Quality assurance
 
-We value a lot of things when assessing a project.
-
-No particular hints on this, but this one: mind the details. ;-)
+We value a lot of things when assessing a project. No particular hints on this, but this one: **mind the details**. ;-)
 
 Happy coding!
