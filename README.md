@@ -48,9 +48,9 @@ https://www.figma.com/proto/VrkWJvZ5Cm0gjPSSnw4y7U/Test-Frontend?page-id=18%3A11
 
 1. The project is configured to use React with Typescript and [Storybook.js](https://storybook.js.org): add the new component and the related storied in `src/stories` directory
 1. Please maintain a consistent code code style throughout the entire project
-1. The repository is configured to use styles with simple css imports, feel free to work this way or add any css-in-js library
-1. For animations you can use simple css or any library of your choice
-1. Embed the google font where you prefer, inside a global css or the component itself
+1. The repository is configured to use styles with simple css imports, feel free to go that way or add any css-in-js library of your choice
+1. To implement the animations you can choose simple css or any library of your choice
+1. Embed the google font wherever you prefer, inside a global css or the component itself
 
 ### Project deadline
 
