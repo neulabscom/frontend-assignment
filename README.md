@@ -39,7 +39,7 @@ https://www.figma.com/proto/VrkWJvZ5Cm0gjPSSnw4y7U/Test-Frontend?page-id=18%3A11
 
 **Product specs**
 
-1. The component must be responsive, according to the specs defined in the "Design" file. Define the breakpoints freely
+1. The component must be responsive, according to the specs defined in the "Design" file. You are free to choose which resolution to set the breakpoint at.
 1. The animation is the same both in mobile and desktop
 1. The component must be reusable with different maps and points of interest
 1. Define the stories show different variants or edge cases
