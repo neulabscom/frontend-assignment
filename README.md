@@ -8,20 +8,26 @@
 
 ## Frontend developer take-home assignment
 
-### Project brief
-
 First things first: thank you for taking the time to take this test.
 We know how much your time is worth, and we greatly
 appreciate your effort.
 
 To work on this project:
-
 1.  Fork this repository
-2.  Add the new component in `src/stories` directory
-3.  When you're done, submit a pull request with your solution
-4.  Send an email to frontend-assignment@neulabs.com to notify the delivery of your project
+1.  When you're done, submit a pull request with your solution
+1.  Send an email to frontend-assignment@neulabs.com to notify the delivery of your project
 
-### Project requirements
+**Online one-click setup for coding (Optional)**
+
+You can use Gitpod (A free online VS Code-like IDE) for coding online.
+
+If you want to use Gitpod:
+1. fork the repository 
+1. click on this button.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+
+### Project brief
 
 You will have to create a component defined in the following Figma files:
 
@@ -40,11 +46,11 @@ https://www.figma.com/proto/VrkWJvZ5Cm0gjPSSnw4y7U/Test-Frontend?page-id=18%3A11
 
 **Code specs**
 
-1. The project is configured to use React with Typescript and Storybook.js
+1. The project is configured to use React with Typescript and [Storybook.js](https://storybook.js.org): add the new component and the related storied in `src/stories` directory
 1. Please maintain a consistent code code style throughout the entire project
 1. The repository is configured to use styles with simple css imports, feel free to work this way or add any css-in-js library
 1. For animations you can use simple css or any library of your choice
-1. You can embed the google font where you prefer, in a global css or in the component you are building
+1. Embed the google font where you prefer, inside a global css or the component itself
 
 ### Project deadline
 
@@ -57,11 +63,3 @@ We value a lot of things when assessing a project.
 No particular hints on this, but this one: mind the details. ;-)
 
 Happy coding!
-
-### Online one-click setup for coding (Optional)
-
-You can use Gitpod (A free online VS Code-like IDE) for coding online.
-
-If you want to use Gitpod fork the repository before clicking on this button.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
