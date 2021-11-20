@@ -3,9 +3,8 @@ import { Flex, FlexProps } from '@chakra-ui/react';
 import { mapDataDetails, MapProps, TranslateProps } from '../interfaces';
 import InfoBox from './InfoBox';
 import Button from './Button';
-
+import { AnimatePresence } from 'framer-motion';
 const discoverPlaceContainerStyle: FlexProps = {
-  id: 'discoverPlaceContainer',
   flexDir: { sm: 'column', md: 'row' },
   w: '100%',
   maxW: '1280px',
@@ -14,7 +13,6 @@ const discoverPlaceContainerStyle: FlexProps = {
 };
 
 const mapContainerStyle: FlexProps = {
-  id: 'map',
   alignItems: 'center',
   m: { sm: 'auto', md: '0px' },
   mr: { md: '60px' },
@@ -42,30 +40,31 @@ const Map = ({
   }
 
   return (
-    <Flex {...discoverPlaceContainerStyle}>
-      <Flex {...mapContainerStyle}>
+    <Flex id="discoverPlaceContainer" {...discoverPlaceContainerStyle}>
+      <Flex id="map" {...mapContainerStyle}>
         <svg width={svgWidth} height={svgHeight} viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}>
           <MapSvg />
-          {details.map((item, index) => {
-            return (
-              <Translate
-                key={index}
-                x={item.x}
-                y={item.y}
-                children={
-                  <>
-                    <Button
-                      onClick={() => handleClick(item)}
-                      isSelected={item.title === selectedPlace.title}
-                    />
-                  </>
-                }
-              />
-            );
-          })}
+          {details.map((item, index) => (
+            <Translate
+              key={index}
+              x={item.x}
+              y={item.y}
+              children={
+                <Button
+                  onClick={() => handleClick(item)}
+                  isSelected={item.title === selectedPlace.title}
+                />
+              }
+            />
+          ))}
         </svg>
       </Flex>
-      {showInfoBox && <InfoBox {...selectedPlace} />}
+
+      {showInfoBox && (
+        <AnimatePresence>
+          <InfoBox {...selectedPlace} />
+        </AnimatePresence>
+      )}
     </Flex>
   );
 };

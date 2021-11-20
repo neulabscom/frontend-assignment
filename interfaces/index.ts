@@ -29,5 +29,5 @@ export interface MapProps {
 
 export interface CustomButtonProps {
   isSelected: boolean;
-  onClick: () => void;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }

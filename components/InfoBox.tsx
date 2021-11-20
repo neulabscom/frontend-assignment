@@ -1,5 +1,6 @@
+import React, { memo } from 'react';
 import { Flex, FlexProps, Image, Text, Heading } from '@chakra-ui/react';
-
+import { motion } from 'framer-motion';
 interface InfoBoxProps {
   title?: string;
   description?: string;
@@ -8,13 +9,12 @@ interface InfoBoxProps {
 }
 
 const infoBoxWrapperStyle: FlexProps = {
-  id: 'infoBox',
   flexDir: { sm: 'column', md: 'row' },
   justifyContent: 'space-between',
   alignItems: 'center',
   w: '100%',
   maxW: '575px',
-  minH: '100px',
+
   py: '24px',
   my: { sm: '12px', md: '0px' },
   borderTopWidth: '1px',
@@ -23,25 +23,46 @@ const infoBoxWrapperStyle: FlexProps = {
   borderTopColor: 'black',
 };
 
-const InfoBox = ({ title, description, levelImageUrl, level }: InfoBoxProps) => {
-  return (
-    <Flex {...infoBoxWrapperStyle}>
-      <Flex id="infoBoxText" flexDir="column" mr={{ sm: '0px', md: '12px' }}>
-        <Heading as="h3" size="lg" fontSize="28px" mb="10px">
-          {title}
-        </Heading>
-        <Text id="description" as="p">
-          {description}
-        </Text>
-      </Flex>
-      <Flex id="levelContainer" flexDir="column" my={{ sm: '12px', md: '0px' }}>
-        <Image src={levelImageUrl} alt={'level-' + title} />
-        <Text fontWeight="700" fontSize="28px" whiteSpace="nowrap" textAlign="center" mt="4px">
-          {'Livello ' + level}
-        </Text>
-      </Flex>
-    </Flex>
-  );
-};
+const InfoBox = memo(
+  ({ title, description, levelImageUrl, level }: InfoBoxProps) => {
+    const MotionFlex = motion(Flex);
+
+    return (
+      <MotionFlex
+        id="infoBox"
+        transition={{ duration: 0.8 }}
+        initial={{ height: 100 }}
+        animate={{ height: '100%' }}
+        exit={{ opacity: 0 }}
+        layout
+        {...infoBoxWrapperStyle}
+      >
+        <MotionFlex
+          transition={{ duration: 2.2 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          layout
+        >
+          <Flex id="infoBoxText" flexDir="column" mr={{ sm: '0px', md: '12px' }} minH="100px">
+            <Heading as="h3" size="lg" fontSize="28px" mb="10px">
+              {title}
+            </Heading>
+            <Text id="description" as="p">
+              {description}
+            </Text>
+          </Flex>
+          <Flex id="levelContainer" flexDir="column" my={{ sm: '12px', md: '0px' }}>
+            <Image src={levelImageUrl} alt={'level-' + title} />
+            <Text fontWeight="700" fontSize="28px" whiteSpace="nowrap" textAlign="center" mt="4px">
+              {'Livello ' + level}
+            </Text>
+          </Flex>
+        </MotionFlex>
+      </MotionFlex>
+    );
+  },
+  (next, prev) => next.title === prev.title,
+);
 
 export default InfoBox;
