@@ -6,18 +6,39 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-storysource',
-    '@snek-at/storybook-addon-chakra-ui',
+    '@storybook/preset-create-react-app',
   ],
+  typescript: {
+    check: true, // typecheck storybook during Storybook build
+  },
+  refs: {
+    'Chakra-UI': {
+      title: 'Chakra UI',
+      url: 'https://chakra-ui-storybook.vercel.app/',
+    },
+  },
   webpackFinal: async (config) => {
+    // Needed for SVG importing using svgr
+    const indexOfRuleToRemove = config.module.rules.findIndex((rule) =>
+      rule.test.toString().includes('svg'),
+    );
+    config.module.rules.splice(indexOfRuleToRemove, 1, {
+      test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/,
+      loader: require.resolve('file-loader'),
+      options: {
+        name: 'static/media/[name].[hash:8].[ext]',
+        esModule: false,
+      },
+    });
     config.module.rules.push({
-      test: /\.scss$/,
+      test: /\.svg$/,
       use: [
-        'style-loader',
-        'css-loader',
-        'postcss-loader',
-        // Add the sass loader to process scss files
-        'sass-loader',
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgo: false,
+          },
+        },
       ],
     });
     return {

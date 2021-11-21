@@ -1,7 +1,21 @@
+import React from 'react';
+import { ChakraProvider, CSSReset } from '@chakra-ui/react';
+import Fonts from '../theme/fonts';
 import theme from '../theme';
 
+import '../styles/globals.css';
+
+export const decorators = [
+  (Story) => (
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+      <Fonts />
+      <Story />
+    </ChakraProvider>
+  ),
+];
+
 export const parameters = {
-  chakra: { theme },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {

@@ -1,6 +1,4 @@
-export interface mapDataProps {
-  details: Array<mapDataDetails>;
-}
+import React, { HTMLAttributes, MouseEventHandler, ReactNode } from 'react';
 
 export interface mapDataDetails {
   level: number;
@@ -19,15 +17,23 @@ export interface TranslateProps {
 
 export interface MapProps {
   MapSvg: React.FC;
-  mapData: mapDataProps;
-  svgWidth: number;
-  svgHeight: number;
+  mapData: mapDataDetails[] | [];
+  showButtons: boolean;
+  showInfoBox: boolean;
   viewBoxWidth: number;
   viewBoxHeight: number;
-  showInfoBox: boolean;
+  childSvgWidth: number;
+  childSvgHeight: number;
 }
 
-export interface CustomButtonProps {
-  isSelected: boolean;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+export interface CustomButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  variant: 'default' | 'selected';
+  handleClick?: () => void;
+}
+
+export interface InfoBoxProps {
+  title?: string;
+  description?: string;
+  levelImageUrl?: string;
+  level?: Number;
 }

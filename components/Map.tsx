@@ -1,64 +1,70 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, FC } from 'react';
 import { Flex, FlexProps } from '@chakra-ui/react';
 import { mapDataDetails, MapProps, TranslateProps } from '../interfaces';
 import InfoBox from './InfoBox';
-import Button from './Button';
 import { AnimatePresence } from 'framer-motion';
-const discoverPlaceContainerStyle: FlexProps = {
-  flexDir: { sm: 'column', md: 'row' },
-  w: '100%',
-  maxW: '1280px',
-  justifyContent: 'center',
-  alignItems: 'center',
-};
+import MapButton from './MapButton';
+
+const svgWidth = 312;
+const svgHeight = 305;
 
 const mapContainerStyle: FlexProps = {
+  flexDir: { sm: 'column', md: 'row' },
   alignItems: 'center',
   m: { sm: 'auto', md: '0px' },
-  mr: { md: '60px' },
 };
 
-const Map = ({
+const Map: FC<MapProps> = ({
   MapSvg,
   mapData,
-  svgWidth = 312,
-  svgHeight = 305,
-  viewBoxWidth = 312,
-  viewBoxHeight = 305,
+  showButtons = true,
   showInfoBox = true,
-}: MapProps) => {
-  const { details } = mapData;
-  const [selectedPlace, setSelectedPlace] = useState<mapDataDetails>(details[1]);
+  viewBoxWidth = svgWidth,
+  viewBoxHeight = svgHeight,
+  childSvgWidth = svgWidth,
+  childSvgHeight = svgHeight,
+}) => {
+  const [selectedPlace, setSelectedPlace] = useState(mapData[0] || []);
 
-  /** Set coordinates and return a children component inside group tag */
+  /** Set coordinates and return a children component inside a <g> (group) tag */
   function Translate({ x = 0, y = 0, children }: TranslateProps) {
     return <g transform={`translate(${x},${y})`}>{children}</g>;
   }
 
-  function handleClick(place: mapDataDetails) {
-    if (place) setSelectedPlace(place);
+  function handleClick(locationInfo: mapDataDetails) {
+    if (locationInfo) setSelectedPlace(locationInfo);
   }
 
   return (
-    <Flex id="discoverPlaceContainer" {...discoverPlaceContainerStyle}>
-      <Flex id="map" {...mapContainerStyle}>
-        <svg width={svgWidth} height={svgHeight} viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}>
+    <Flex id="map" {...mapContainerStyle}>
+      {MapSvg && (
+        <svg
+          width={childSvgWidth}
+          height={childSvgHeight}
+          viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
+        >
           <MapSvg />
-          {details.map((item, index) => (
-            <Translate
-              key={index}
-              x={item.x}
-              y={item.y}
-              children={
-                <Button
-                  onClick={() => handleClick(item)}
-                  isSelected={item.title === selectedPlace.title}
+          {mapData &&
+            mapData?.map((item: mapDataDetails) => {
+              const { title, y, x } = item;
+              if (!showButtons) return;
+              return (
+                <Translate
+                  key={'title-' + title}
+                  x={x}
+                  y={y}
+                  children={
+                    title === selectedPlace.title ? (
+                      <MapButton variant="selected" />
+                    ) : (
+                      <MapButton variant="default" handleClick={() => handleClick(item)} />
+                    )
+                  }
                 />
-              }
-            />
-          ))}
+              );
+            })}
         </svg>
-      </Flex>
+      )}
 
       {showInfoBox && (
         <AnimatePresence>

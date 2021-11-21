@@ -2,10 +2,9 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-html,
+/* html,
 body,
 body > div:first-child,
 div#__next,
 div#__next > div {
-  background-color: #ece8d5;
-}
+} */
