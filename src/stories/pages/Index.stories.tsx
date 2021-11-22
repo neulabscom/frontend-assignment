@@ -1,10 +1,13 @@
+import React from 'react';
 import Index from '../../../pages/index';
 import { Story, Meta } from '@storybook/react';
 
-export default {
+let meta: Meta = {
   title: 'Pages/Home',
   component: Index,
-} as Meta;
+};
+
+export default meta;
 
 const Template: Story<any> = (args) => <Index {...args} />;
 

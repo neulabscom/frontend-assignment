@@ -2,15 +2,16 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import InfoBox from '../../../components/InfoBox';
 import { InfoBoxProps } from '../../../interfaces';
-import { action } from '@storybook/addon-actions';
 
-export default {
+const meta: Meta = {
   title: 'Components/InfoBox',
   component: InfoBox,
   argTypes: {
     handleClick: { action: 'clicked' },
   },
-} as Meta;
+};
+
+export default meta;
 
 const Template: Story<InfoBoxProps> = (args) => <InfoBox {...args} />;
 

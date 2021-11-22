@@ -4,13 +4,15 @@ import MapButton from '../../../components/MapButton';
 import { CustomButtonProps } from '../../../interfaces';
 import { action } from '@storybook/addon-actions';
 
-export default {
+let meta: Meta = {
   title: 'Components/MapButton',
   component: MapButton,
   argTypes: {
     handleClick: { action: 'clicked' },
   },
-} as Meta;
+};
+
+export default meta;
 
 const Template: Story<CustomButtonProps> = (args) => <MapButton {...args} />;
 

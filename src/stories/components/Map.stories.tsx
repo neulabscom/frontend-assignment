@@ -38,11 +38,13 @@ const mapData: mapDataDetails[] = [
   },
 ];
 
-export default {
+let meta: Meta = {
   title: 'Components/Map',
   component: Map,
   argTypes: {},
-} as Meta;
+};
+
+export default meta;
 
 const Template: Story<MapProps> = (args) => <Map {...args} />;
 
@@ -53,8 +55,4 @@ MapSvg.args = {
   mapData,
   showButtons: true,
   showInfoBox: true,
-  viewBoxWidth: 312,
-  viewBoxHeight: 305,
-  childSvgWidth: 312,
-  childSvgHeight: 305,
 };

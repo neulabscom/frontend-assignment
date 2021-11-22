@@ -1,4 +1,7 @@
+import React from 'react';
 import {
+  Box,
+  BoxProps,
   Heading,
   HeadingProps,
   Container,
@@ -12,10 +15,12 @@ import MapOne from '../public/maps/MapOne.svg';
 
 const containerStyleProps: ContainerProps = {
   id: 'app-wrapper',
-  maxW: { sm: 'container.sm', md: 'container.xl' },
+  d: 'flex',
+  flexDir: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  p: '24px',
+  maxW: { sm: '100%', md: '1600px' },
+  p: { sm: '24px', md: '44px' },
   bg: '#ece8d5',
 };
 
@@ -28,16 +33,12 @@ const discoverPlaceTitleStyle: HeadingProps = {
   mb: { sm: '24px', md: '30px' },
 };
 
-const discoverPlaceContainerStyle: FlexProps = {
-  w: '100%',
-  maxW: '1280px',
-  justifyContent: 'center',
-  alignItems: 'center',
+const discoverPlaceContainerStyle: BoxProps = {
+  display: 'inline-block',
+  margin: 'auto',
 };
 
 const Index = () => {
-  const svgW = 312;
-  const svgH = 305;
   const mapData: mapDataDetails[] = [
     {
       level: 1,
@@ -74,18 +75,9 @@ const Index = () => {
   return (
     <Container {...containerStyleProps}>
       <Heading {...discoverPlaceTitleStyle}>Scopri i luoghi del mistero</Heading>
-      <Flex id="discoverPlaceContainer" {...discoverPlaceContainerStyle}>
-        <Map
-          MapSvg={MapOne}
-          mapData={mapData}
-          showInfoBox
-          showButtons
-          childSvgWidth={svgW}
-          childSvgHeight={svgH}
-          viewBoxWidth={svgW}
-          viewBoxHeight={svgH}
-        />
-      </Flex>
+      <Box id="discoverPlaceContainer" {...discoverPlaceContainerStyle}>
+        <Map MapSvg={MapOne} mapData={mapData} showInfoBox showButtons />
+      </Box>
     </Container>
   );
 };

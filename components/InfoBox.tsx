@@ -1,4 +1,4 @@
-import React, { memo, useRef } from 'react';
+import React, { memo } from 'react';
 import { Flex, FlexProps, Image, Text, Heading } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { InfoBoxProps } from '../interfaces';
@@ -8,7 +8,7 @@ const infoBoxWrapperStyle: FlexProps = {
   w: '100%',
   maxW: '575px',
   py: '24px',
-  mx: '32px',
+  mx: { sm: '24px', md: '64px' },
   borderTopWidth: '1px',
   borderBottomWidth: '1px',
   borderBottomColor: 'black',
@@ -19,6 +19,7 @@ const InfoBoxContent: FlexProps = {
   w: '100%',
   flexDir: { sm: 'column', md: 'row' },
   alignItems: 'center',
+  justifyContent: 'space-between',
 };
 
 const infoBoxText: FlexProps = {
@@ -28,56 +29,54 @@ const infoBoxText: FlexProps = {
 };
 
 const levelContainer: FlexProps = {
+  justifyContent: 'center',
   flexDir: 'column',
   my: { sm: '12px', md: '0px' },
 };
 
-const InfoBox = memo(
-  ({ title, description, levelImageUrl, level }: InfoBoxProps) => {
-    const MotionFlex = motion(Flex);
+const InfoBox = ({ title, description, levelImageUrl, level }: InfoBoxProps) => {
+  const MotionFlex = motion(Flex);
 
-    return (
-      <Flex minH="300px" justifyContent="center" alignItems="center">
+  return (
+    <Flex minH="300px" justifyContent="center" alignItems="center">
+      <MotionFlex
+        id="infoBoxWrapper"
+        initial={{ height: 100 }}
+        animate={{ height: '100%' }}
+        transition={{ duration: 0.4 }}
+        {...infoBoxWrapperStyle}
+      >
         <MotionFlex
-          id="infoBoxWrapper"
-          initial={{ height: 100 }}
-          animate={{ height: '100%' }}
-          transition={{ duration: 0.4 }}
-          {...infoBoxWrapperStyle}
+          id="InfoBoxContent"
+          transition={{ duration: 2.5 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          {...InfoBoxContent}
         >
-          <MotionFlex
-            id="InfoBoxContent"
-            transition={{ duration: 2.5 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            {...InfoBoxContent}
-          >
-            <Flex id="infoBoxText" {...infoBoxText}>
-              <Heading as="h3" size="lg" fontSize="28px" mb="10px" fontWeight="normal">
-                {title}
-              </Heading>
-              <Text id="description" as="p">
-                {description}
-              </Text>
-            </Flex>
-            <Flex id="levelContainer" {...levelContainer}>
-              <Image src={levelImageUrl} alt={'level-' + title} />
-              <Text
-                fontWeight="700"
-                fontSize="28px"
-                whiteSpace="break-spaces"
-                textAlign="center"
-                mt="4px"
-              >
-                {'Livello ' + level}
-              </Text>
-            </Flex>
-          </MotionFlex>
+          <Flex id="infoBoxText" {...infoBoxText}>
+            <Heading as="h3" size="lg" fontSize="28px" mb="10px" fontWeight="normal">
+              {title}
+            </Heading>
+            <Text id="description" as="p">
+              {description}
+            </Text>
+          </Flex>
+          <Flex id="levelContainer" {...levelContainer}>
+            <Image maxW="148px" src={levelImageUrl} alt={'level-' + title} />
+            <Text
+              fontWeight="700"
+              fontSize="28px"
+              whiteSpace="break-spaces"
+              textAlign="center"
+              mt="4px"
+            >
+              {'Livello ' + level}
+            </Text>
+          </Flex>
         </MotionFlex>
-      </Flex>
-    );
-  },
-  (next, prev) => next.title === prev.title,
-);
+      </MotionFlex>
+    </Flex>
+  );
+};
 
 export default InfoBox;

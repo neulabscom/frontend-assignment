@@ -3,8 +3,6 @@ import { ChakraProvider, CSSReset } from '@chakra-ui/react';
 import Fonts from '../theme/fonts';
 import theme from '../theme';
 
-import '../styles/globals.css';
-
 export const decorators = [
   (Story) => (
     <ChakraProvider theme={theme}>

@@ -4,7 +4,7 @@ module.exports = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-
+    config.resolve.extensions.push('.ts', '.tsx');
     return config;
   },
 };

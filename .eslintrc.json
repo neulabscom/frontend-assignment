@@ -1,18 +1,28 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": ["plugin:react/recommended", "prettier"],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": ["react"],
-    "rules": {
-        "react/react-in-jsx-scope": "off"
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.stories.*"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
     }
+  ],
+  "extends": ["next", "plugin:react/recommended", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/no-children-prop": "off",
+    "react/display-name": "off"
+  }
 }

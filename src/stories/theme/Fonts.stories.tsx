@@ -1,5 +1,5 @@
-import { Box, Stack } from '@chakra-ui/layout';
 import React from 'react';
+import { Box, Stack } from '@chakra-ui/layout';
 
 export default {
   title: 'Typography/Fonts',

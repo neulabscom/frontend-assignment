@@ -20,10 +20,6 @@ export interface MapProps {
   mapData: mapDataDetails[] | [];
   showButtons: boolean;
   showInfoBox: boolean;
-  viewBoxWidth: number;
-  viewBoxHeight: number;
-  childSvgWidth: number;
-  childSvgHeight: number;
 }
 
 export interface CustomButtonProps extends HTMLAttributes<HTMLButtonElement> {
