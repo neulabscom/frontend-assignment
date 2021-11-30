@@ -17,6 +17,8 @@ To work on this project:
 1.  When you're done, submit a pull request with your solution
 1.  Send an email to frontend-assignment@neulabs.com to notify the delivery of your project
 
+You can either clone the repository and work on a local copy: in that case please contact us at frontend-assignment@neulabs.com when you're done with the assignment, and we'll arrange the best way to assess your work.
+
 **Online one-click setup for coding (Optional)**
 
 You can use Gitpod (A free online VS Code-like IDE) for coding online.
