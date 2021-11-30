@@ -1,0 +1,20 @@
+{
+  "hotel": {
+    "level": "Level 1",
+    "title": "The Hotel",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+    "image": "hotel"
+  },
+  "church": {
+    "level": "Level 2",
+    "title": "The Church",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+    "image": "church"
+  },
+  "graveyard": {
+    "level": "Level 3",
+    "title": "The Graveyard",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+    "image": "graveyard"
+  }
+}
