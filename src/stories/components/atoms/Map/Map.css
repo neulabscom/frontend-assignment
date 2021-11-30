@@ -1,0 +1,14 @@
+.map-container{
+  position: relative;
+  min-width: 440px
+}
+
+@media screen and (max-width: 768px) {
+  .map-container{
+    min-width: 312px
+  }
+}
+
+.map-container img{
+  width: 100%
+}

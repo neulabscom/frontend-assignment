@@ -1,0 +1,75 @@
+@import url('../../../assets/css/font.css');
+
+.map-details-container{
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .map-details-container{
+    padding: 50px
+  }
+}
+
+.map-details-container > hr{
+  width: 100%;
+}
+
+.map-details-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 575px;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .map-details-box{
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.map-details-box > div:nth-child(2){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.map-details-title {
+  font-family: Special Elite;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 112%;
+  color: #000000;
+}
+
+.map-details-content{
+  font-family: Sarabun;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 145%;
+  letter-spacing: 0.01em;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.map-details-image{
+  width: auto;
+  object-fit: contain;
+}
+
+.map-details-level-info{
+  font-family: Sarabun;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 145%;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #03313B;
+}
