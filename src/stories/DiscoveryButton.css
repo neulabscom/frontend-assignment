@@ -1,0 +1,41 @@
+.disc-btn-container, .disc-btn-container-selected {
+    width: 32px;
+    height: 32px;
+    position: relative;
+}
+
+.disc-btn-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+.disc-btn-container img.selected {
+    opacity: 0;
+}
+
+.disc-btn-container:hover img.selected {
+    opacity: 1;
+}
+
+.disc-btn-container:hover img.default {
+    opacity: 0;
+}
+
+.disc-btn-container-selected img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+}
+
+.disc-btn-container-selected img.selected {
+    opacity: 1;
+}
+
+.disc-btn-container-selected img.default {
+    opacity: 0;
+}
