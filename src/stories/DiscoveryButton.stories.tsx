@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { DiscoveryButton } from './DiscoveryButton';
 
 export default {
-    title: 'Example/DiscoveryButton',
+    title: 'Example/Discovery Button',
     component: DiscoveryButton,
   } as ComponentMeta<typeof DiscoveryButton>;
 
