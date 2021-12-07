@@ -1,0 +1,13 @@
+.page-title {
+    font-family: 'Special Elite';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 112%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    margin: 0px 0px;
+}
