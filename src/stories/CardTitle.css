@@ -1,0 +1,13 @@
+.card-title {
+    font-family: 'Special Elite';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 112%;
+    color: #000000;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 10px 0px;
+}
