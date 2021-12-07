@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 32px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 8px;
+  margin: 16px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-content {
+    flex-direction: column;
+    padding: 0px;
+    margin: 4px 0px;
+  }
+}
+
+.separator {
+  background: #000000;
+  align-self: stretch;
+  margin: 10px 0px;
+}
