@@ -11,7 +11,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 16px 0px;
+  animation: fadeinContent 1s 1;
 }
 
 @media only screen and (max-width: 600px) {
@@ -26,4 +26,53 @@
   background: #000000;
   align-self: stretch;
   margin: 10px 0px;
+  animation: bouncingSeparator 1s 1;
+}
+
+.separator:nth-of-type(2) {
+  animation: bouncingSeparatorBottom 1s 1;
+}
+
+@keyframes bouncingSeparator {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(4rem);
+  }
+  70% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bouncingSeparatorBottom {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-4rem);
+  }
+  70% {
+    transform: translateY(1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeinContent {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+    transform: translateY(-0.2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
