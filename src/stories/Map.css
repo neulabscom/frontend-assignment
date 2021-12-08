@@ -2,6 +2,8 @@
     width: 440px;
     height: 440px;
     position: relative;
+    flex: none;
+    flex-grow: 0;
 }
 
 @media only screen and (max-width: 600px) {

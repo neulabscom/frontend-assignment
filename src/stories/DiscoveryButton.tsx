@@ -14,7 +14,7 @@ export const DiscoveryButton = ({
 }: DiscoveryButtonProps) => {
     const containerClass = selected ? 'disc-btn-container-selected' : 'disc-btn-container'
     return (
-        <div className={containerClass} >
+        <div className={containerClass} onClick={onClick}>
             <img className='default' src={DiscoveryButtonImg} />
             <img className='selected' src={DiscoveryButtonSelectedImg} />
         </div>

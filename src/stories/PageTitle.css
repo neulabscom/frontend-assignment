@@ -1,10 +1,16 @@
 .page-title {
-    font-family: 'Special Elite';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 112%;
-    text-align: center;
-    color: #000000;
-    margin: 0px 0px;
+  font-family: 'Special Elite';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 34px;
+  text-align: center;
+  color: #000000;
+  margin: 0px 0px 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  .page-title {
+    margin: 0;
+  }
 }
