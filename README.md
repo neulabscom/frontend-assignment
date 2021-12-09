@@ -2,7 +2,7 @@
     <img src="./logo.svg" alt="frontend-assignment" width="400">
   <br><br>
   <a href="https://gitpod.io/from-referrer/">
-    <img src="https://img.shields.io/badge/Gitpod-Ready--to---blue?logo=gitpod" alt="Gitpod Ready to Code">
+    <img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready to Code">
   </a>
 </div>
 
