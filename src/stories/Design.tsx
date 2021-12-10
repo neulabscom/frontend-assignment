@@ -46,7 +46,11 @@ export const Design = () => {
   const [Level, setLevel] = useState<'hotel' | 'church' | 'graveyard'>('hotel')
 
   const getButton = (levelName: 'hotel' | 'church' | 'graveyard') => (
-    <DiscoveryButton selected={Level===levelName} onClick={() => setLevel(levelName)} />
+    <DiscoveryButton selected={Level===levelName} onClick={() => {
+      setLevel(levelName)
+      const card: any = document.getElementById('card')
+      card.scrollIntoView({ behavior: 'smooth' })
+    }} />
   )
 
   const mapProps = {
@@ -72,7 +76,7 @@ export const Design = () => {
       <div className='design-content'>
         <Map {...mapProps} />
         <div className='design-card'>
-          <Card {...levelsProps[Level]} />
+          <Card key={Level} {...levelsProps[Level]} />
         </div>
       </div>
     </div>

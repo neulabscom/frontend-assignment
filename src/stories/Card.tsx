@@ -16,7 +16,7 @@ interface CardProps {
 
 export const Card = ({contentProps, imageProps}: CardProps) => {
   return (
-    <div className='card'>
+    <div id='card'>
       <hr className='separator' />
       <div className='card-content'>
         <CardText {...contentProps} />
