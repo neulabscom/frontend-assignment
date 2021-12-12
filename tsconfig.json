@@ -18,7 +18,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "Assets/*": ["stories/assets/*"],
+      "Components/*": ["stories/components/*"],
+      "Consts": ["stories/consts.ts"]
+    } 
   },
   "include": [
     "src"
