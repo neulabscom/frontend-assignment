@@ -1,13 +1,17 @@
-import React, { FunctionComponent } from 'react';
 import './Title.css'
+import React from 'react'
 
 interface TitlePros {
-  type: 'main' | 'sub',
+  /**
+   * Main is centered, while sub is smaller and left aligned
+   */
+  type: 'main' | 'sub'
+  /**
+   * Title text
+   */
   text: string
 }
 
-export const Title = ({type = 'main', text}: TitlePros) => {
-    return (
-        <div className={`title ${type}`}>{text}</div>
-    )
+export const Title = ({ type = 'main', text }: TitlePros) => {
+  return <div className={`title ${type}`}>{text}</div>
 }

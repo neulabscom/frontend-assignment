@@ -1,43 +1,44 @@
-.disc-btn-container, .disc-btn-container-selected {
-    width: 32px;
-    height: 32px;
-    position: relative;
+.disc-btn-container,
+.disc-btn-container-selected {
+  width: 32px;
+  height: 32px;
+  position: relative;
 }
 
 .disc-btn-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-    transition: opacity .2s;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  width: 100%;
+  height: 100%;
 }
 
 .disc-btn-container img.selected {
-    opacity: 0;
+  opacity: 0;
 }
 
 .disc-btn-container:hover img.selected {
-    opacity: 1;
+  opacity: 1;
 }
 
 .disc-btn-container:hover img.default {
-    opacity: 0;
+  opacity: 0;
 }
 
 .disc-btn-container-selected img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .disc-btn-container-selected img.selected {
-    opacity: 1;
+  opacity: 1;
 }
 
 .disc-btn-container-selected img.default {
-    opacity: 0;
+  opacity: 0;
 }

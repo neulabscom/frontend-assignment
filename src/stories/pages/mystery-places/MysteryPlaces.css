@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 40px 24px;
-  background: #ECE8D5;
+  background: #ece8d5;
 }
 
 .design-content {
@@ -23,12 +23,16 @@
   align-items: center;
   margin-left: 24px;
   align-self: stretch;
-  flex-grow: 0;
   max-width: 655px;
 }
 
 @media only screen and (max-width: 992px) {
   .design-content {
     flex-direction: column;
+  }
+
+  .design-card {
+    margin: 0;
+    max-width: none;
   }
 }

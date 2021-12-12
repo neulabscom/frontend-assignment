@@ -1,19 +1,25 @@
-import React, {ReactNode} from 'react';
 import './Card.css'
-import { Title } from 'Components/title';
 import { Text } from 'Components/text'
-import { Image } from 'Components/image' 
+import React, { ReactNode } from 'react'
+import { Title } from 'Components/title'
+import { Image, ImageProps } from 'Components/image'
 
 export interface CardProps {
-  title: string,
-  text: ReactNode,
-  imageProps: {
-    caption: string
-    pathImg: string
-  }
+  /**
+   * Card title
+   */
+  title: string
+  /**
+   * Card description
+   */
+  text: ReactNode
+  /**
+   * Properties for the Image component
+   */
+  imageProps: ImageProps
 }
 
-export const Card = ({title, text, imageProps}: CardProps) => {
+export const Card = ({ title, text, imageProps }: CardProps) => {
   return (
     <div id='card'>
       <hr className='separator' />
